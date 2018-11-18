@@ -1,0 +1,24 @@
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.inner_flex_container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: stretch;
+}
+.credit-card {
+    min-height: 155px;
+    padding-top: 4%;
+    padding-left: 5%;
+}
+.mat-button.mat-large {
+    min-width: 110%;
+}
+.form_container {
+    display: flex;
+    flex-direction: row;
+}

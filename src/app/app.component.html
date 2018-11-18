@@ -1,0 +1,117 @@
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#" >Credit Smarter.</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Credit Card Calculator!</h1>
+    <p>Need help applying for a new credit card? Tell us your spending habits and we'll give you our recommendation!</p>
+    <br />
+    <h5> Enter Some Information </h5>
+    <div class="form_container">
+      <mat-form-field style="padding-right: 1%">
+        <input matInput required type="number" placeholder="Total Monthly Spending ($)" [(ngModel)]="monthly_spending" (change)="exposed = true; gas = 0; restaurant = 0; grocery = 0">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select required placeholder="Credit Score" [(value)]="option">
+          <mat-option value = "0">-- None --</mat-option>
+          <mat-option value="0">300-579 (Very Poor)</mat-option>
+          <mat-option value="1">580-669 (Fair)</mat-option>
+          <mat-option value="1">670-739 (Good)</mat-option>
+          <mat-option value="2">740-799 (Very Good)</mat-option>
+          <mat-option value="2">800-850 (Excellent)</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="form_container">
+      <div class="inner_flex_container">
+        Restaurant Spending: ${{restaurant}}
+        <mat-slider thumbLabel [disabled]="monthly_spending == null" [max]="monthly_spending - grocery - gas" [displayWith]="formatLabel"
+          [min]="0" [(ngModel)]="restaurant" [step]="step">
+        </mat-slider>
+        Grocery Spending: ${{grocery}}
+        <mat-slider thumbLabel [disabled]="monthly_spending == null" [max]="monthly_spending - gas - restaurant" [min]="0" [(ngModel)]="grocery"
+          [step]="step" [displayWith]="formatLabel">
+        </mat-slider>
+        Gas/Travel Spending: ${{gas}}
+        <mat-slider thumbLabel [disabled]="monthly_spending == null" [max]="monthly_spending - restaurant - grocery" [min]="0" [(ngModel)]="gas"
+          [step]="step" [displayWith]="formatLabel">
+        </mat-slider>
+      </div>
+      <div class="inner_flex_container" >
+          &nbsp;&nbsp;Percent Paid off Per Month: {{percentPaidOff}} %
+        <mat-slider thumbLabel [max]="100" [min]="0" [(ngModel)]="percentPaidOff"
+          [step]="step" [displayWith]="formatLabel">
+        </mat-slider>
+      </div>
+      <img src="../assets/pictures/credit_cards.png" style="position: absolute; left: 50%">
+
+    </div>
+
+
+    <p>
+      <a class="btn btn-primary btn-lg" href="#" role="button" (click)="sortCostArray()">Calculate &raquo;</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+<mat-toolbar color="primary" style="padding-left: 5%;"> Choose from Selection of Credit Cards</mat-toolbar>
+
+<div class = "form_container" style="padding-left: 5%;  padding-top: 3%">
+    <h5 > Sort By: </h5>
+    <mat-checkbox [(ngModel)]="checked3"(change)="sortAPRArray()" style="padding-left: 3%">Variable APR</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked2"(change) = "sortAnnualArray()" style="padding-left: 3%">Annual Fee</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked1"(change)="sortSatArray()"  style="padding-left: 3%">Customer Satisfaction</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked4"(change)="sortByCredit()"  style="padding-left: 3%">Credit Score</mat-checkbox>
+</div>
+
+
+
+<div class="flex_container credit-card" *ngFor="let card of credit_card">
+  <img src={{card.src}} style="max-height: 155px">
+  <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px">
+    <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
+    <h6> Approx. APR: {{card.APR}}%</h6>
+    <h6> Annual Fee: ${{card.annualFee}}</h6>
+    <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
+    <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
+    <h6> Gas Cashback {{card.cashbackGas}}%</h6>
+    <p> {{card.info}}</p>
+  </div>
+  <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
+    <p>
+      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: orange; border-color: orange">Apply Now &raquo;</a>
+    </p>
+    <p>
+      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: green; border-color: green">More Details &raquo;</a>
+    </p>
+    <div>
+      Customer Rating: {{card.customerSat}}
+    </div>
+    <div>
+        Credit Score: {{card.score == 2 ? 'Excellent' : card.score == 1 ? 'Average' : 'Rebuilding'}}
+    </div>
+  </div>
+</div>
+<br />
+
+
+
+
+<footer class="mastfoot mt-auto" style="padding-left: 5%">
+  <div class="inner">
+    <p> Hack NC Project by
+      <b>Kimlynn Ngo</b> and
+      <b>Daniel Su.</b>
+    </p>
+  </div>
