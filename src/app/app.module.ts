@@ -15,7 +15,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import 'hammerjs/hammer';
 
+
+import {FirebaseModule, FirebaseProvider} from 'angular-firebase'
+
+
 import {CourseDialogComponentComponent} from './course-dialog-component/course-dialog-component.component';
+
+
 
 
 @NgModule({
@@ -23,14 +29,14 @@ import {CourseDialogComponentComponent} from './course-dialog-component/course-d
     AppComponent, CourseDialogComponentComponent
   ],
   imports: [
-    BrowserModule, BrowserAnimationsModule, MatButtonModule,
+    FirebaseModule, BrowserModule, BrowserAnimationsModule, MatButtonModule,
     MatFormFieldModule,MatSelectModule, MatInputModule, MatSliderModule,
-    FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule
+    FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule,
 
     
   ],
   entryComponents: [CourseDialogComponentComponent],
-  providers: [],
+  providers: [FirebaseProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

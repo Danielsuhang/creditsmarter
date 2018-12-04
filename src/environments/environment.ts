@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  firebase: {
+    apiKey: "AIzaSyBeozopQ0-X4Al1fWl74sjGEYuiKUjz8k4",
+    authDomain: "credit-smarter.firebaseapp.com",
+    databaseURL: "https://credit-smarter.firebaseio.com",
+    projectId: "credit-smarter",
+    storageBucket: "credit-smarter.appspot.com",
+    messagingSenderId: "516902412824"
+}
 };
 
 /*
