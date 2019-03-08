@@ -67,7 +67,7 @@
 
 <mat-toolbar color="primary" style="padding-left: 5%;"> Choose from Selection of Credit Cards</mat-toolbar>
 
-<div class = "form_container" style="padding-left: 5%;  padding-top: 3%">
+<div style="padding-left: 5%;  padding-top: 3%">
     <h5 > Sort By: </h5>
     <mat-checkbox [(ngModel)]="checked3"(change)="sortAPRArray()" style="padding-left: 3%">Variable APR</mat-checkbox>
     <mat-checkbox [(ngModel)]="checked2"(change) = "sortAnnualArray()" style="padding-left: 3%">Annual Fee</mat-checkbox>
@@ -79,7 +79,7 @@
 
 <div class="flex_container credit-card" *ngFor="let card of credit_card">
   <img src={{card.src}} style="max-height: 155px">
-  <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px">
+  <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px; min-width: 300px">
     <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
     <h6> Approx. APR: {{card.APR}}%</h6>
     <h6> Annual Fee: ${{card.annualFee}}</h6>
