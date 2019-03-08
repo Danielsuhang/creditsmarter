@@ -22,9 +22,9 @@ export class AppComponent implements OnInit {
   monthly_spending: number;
   exposed: boolean;
 
-  homepage: boolean = false;
+  homepage: boolean = true;
   socialpage: boolean = false;
-  historypage: boolean = true;
+  historypage: boolean = false;
   securitypage: boolean = false;
 
   gas: number;

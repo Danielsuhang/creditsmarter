@@ -22,3 +22,6 @@
     display: flex;
     flex-direction: row;
 }
+.big_text {
+    font-size: 23px;
+}
