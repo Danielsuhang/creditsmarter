@@ -77,8 +77,8 @@
 
 
 
-<div class="flex_container credit-card" *ngFor="let card of credit_card">
-  <img src={{card.src}} style="max-height: 155px">
+<mat-card class="frame credit-card" *ngFor="let card of credit_card">
+  <img src={{card.src}} style="max-height: 155px; max-width: 275px">
   <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px; min-width: 300px">
     <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
     <h6> Approx. APR: {{card.APR}}%</h6>
@@ -102,7 +102,7 @@
         Credit Score: {{card.score == 2 ? 'Excellent' : card.score == 1 ? 'Average' : 'Rebuilding'}}
     </div>
   </div>
-</div>
+</mat-card>
 <br />
 
 

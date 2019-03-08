@@ -28,8 +28,7 @@
 /* Testing box overflow */
 .frame {
     position:relative;
-    background-color: lightgreen;
-    width: 80%;
+    width: 100%;
     padding: 12px;
     overflow:hidden;
     flex-flow:row wrap;
