@@ -13,6 +13,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+
 import 'hammerjs/hammer';
 
 import {CourseDialogComponentComponent} from './course-dialog-component/course-dialog-component.component';
@@ -25,7 +27,8 @@ import {CourseDialogComponentComponent} from './course-dialog-component/course-d
   imports: [
     BrowserModule, BrowserAnimationsModule, MatButtonModule,
     MatFormFieldModule,MatSelectModule, MatInputModule, MatSliderModule,
-    FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule
+    FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule,
+    MatCardModule
 
     
   ],
