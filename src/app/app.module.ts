@@ -5,6 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
+//Angular Material Design imports
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
@@ -14,13 +15,17 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
-
 import 'hammerjs/hammer';
 
-
+//Hosting imports
 import {FirebaseModule, FirebaseProvider} from 'angular-firebase'
 
+//Database imports
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
+//Dialog Component
 import {CourseDialogComponentComponent} from './course-dialog-component/course-dialog-component.component';
 
 
@@ -34,7 +39,9 @@ import {CourseDialogComponentComponent} from './course-dialog-component/course-d
     FirebaseModule, BrowserModule, BrowserAnimationsModule, MatButtonModule,
     MatFormFieldModule,MatSelectModule, MatInputModule, MatSliderModule,
     FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase),
+  	AngularFirestoreModule,
 
     
   ],
