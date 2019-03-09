@@ -103,5 +103,7 @@
         -webkit-flex-direction: column;
         flex-direction: column;
     }
-
+    .image {
+        display: none;
+    }
 }
