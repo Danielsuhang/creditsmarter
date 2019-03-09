@@ -81,26 +81,36 @@
 
   <mat-toolbar color="primary" style="padding-left: 5%;"> Choose from Selection of Credit Cards</mat-toolbar>
 
-  <div class="form_container" style="padding-left: 5%;  padding-top: 3%">
-    <h5> Sort By: </h5>
-    <mat-checkbox [(ngModel)]="checked3" (change)="sortAPRArray()" style="padding-left: 3%">Variable APR</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked2" (change)="sortAnnualArray()" style="padding-left: 3%">Annual Fee</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked1" (change)="sortSatArray()" style="padding-left: 3%">Customer Satisfaction</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked4" (change)="sortByCredit()" style="padding-left: 3%">Credit Score</mat-checkbox>
+<div style="padding-left: 5%;  padding-top: 3%">
+    <h5 > Sort By: </h5>
+    <mat-checkbox [(ngModel)]="checked3"(change)="sortAPRArray()" style="padding-left: 3%">Variable APR</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked2"(change) = "sortAnnualArray()" style="padding-left: 3%">Annual Fee</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked1"(change)="sortSatArray()"  style="padding-left: 3%">Customer Satisfaction</mat-checkbox>
+    <mat-checkbox [(ngModel)]="checked4"(change)="sortByCredit()"  style="padding-left: 3%">Credit Score</mat-checkbox>
+</div>
+
+
+
+<mat-card class="frame credit-card" *ngFor="let card of credit_card">
+  <img src={{card.src}} style="max-height: 155px; max-width: 246.02px">
+  <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px; min-width: 300px">
+    <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
+    <h6> Approx. APR: {{card.APR}}%</h6>
+    <h6> Annual Fee: ${{card.annualFee}}</h6>
+    <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
+    <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
+    <h6> Gas Cashback {{card.cashbackGas}}%</h6>
+    <p> {{card.info}}</p>
   </div>
-
-
-
-  <div class="flex_container credit-card" *ngFor="let card of credit_card">
-    <img src={{card.src}} style="max-height: 155px">
-    <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px">
-      <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
-      <h6> Approx. APR: {{card.APR}}%</h6>
-      <h6> Annual Fee: ${{card.annualFee}}</h6>
-      <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
-      <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
-      <h6> Gas Cashback {{card.cashbackGas}}%</h6>
-      <p> {{card.info}}</p>
+  <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
+    <p>
+      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: orange; border-color: orange">Apply Now &raquo;</a>
+    </p>
+    <p>
+      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: green; border-color: green">More Details &raquo;</a>
+    </p>
+    <div>
+      Customer Rating: {{card.customerSat}}
     </div>
     <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
       <p>
@@ -120,48 +130,8 @@
     </div>
   </div>
   <br />
-</div>
-<!-- End of Home Page -->
-
-
-<!-- Start of History Page -->
-<div *ngIf="historypage">
-  <br />
-  <br />
-  <br />
-  <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=15V5yzPnU39CTFASTGHLj4P3KGtJgvgtb84iI75CAtqo&font=Default&lang=en&initial_zoom=2&height=650'
-    width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
-</div>
-<!-- End of History Page -->
-
-<!-- Start of Social Impact Page-->
-<div *ngIf="socialpage">
-  <br />
-  <br />
-  <br />
-  <div class="blog-header">
-    <div class="container">
-      <h1 class="blog-title" style="text-align: center">Insights on Credit Card Usage</h1>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 blog-main">
-        <div class="blog-post">
-          <p> All data according to 2015 Diary of Consumer Payment Choice </p>
-          <iframe width="150%" height="1000" src="//jsfiddle.net/e8n4xd4z/20774/embedded/result/" allowfullscreen="allowfullscreen"
-            allowpaymentrequest frameborder="0"></iframe>
-          <iframe width="150%" height="1000" src="//jsfiddle.net/e8n4xd4z/20775/embedded/result/" allowfullscreen="allowfullscreen"
-            allowpaymentrequest frameborder="0"></iframe>
-          <iframe width="150%" height="900" src="//jsfiddle.net/e8n4xd4z/20777/embedded/result/" allowfullscreen="allowfullscreen"
-            allowpaymentrequest frameborder="0"></iframe>
-
-        </div><!-- /.blog-main -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-  </div>
-  </div>
+</mat-card>
+<br />
 
   <!-- End of Social Page -->
 
