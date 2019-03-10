@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   monthly_spending: number;
   exposed: boolean;
 
+
   gas: number;
   restaurant: number;
   grocery: number;
@@ -446,9 +447,6 @@ export class AppComponent implements OnInit {
   onNavigate() {
     window.open("https://www.capitalone.com/", "_blank");
   }
-
-
-
 }
 
 

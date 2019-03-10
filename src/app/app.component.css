@@ -29,9 +29,10 @@
 .frame {
     position:relative;
     width: 100%;
-    padding: 12px;
     overflow:hidden;
     flex-flow:row wrap;
+    justify-content: space-between;
+    align-items: stretch;
     
     -webkit-justify-content: flex;
     -moz-justify-content: -moz-flex;
@@ -101,5 +102,8 @@
         -ms-flex-direction: column;
         -webkit-flex-direction: column;
         flex-direction: column;
+    }
+    .image {
+        display: none;
     }
 }
