@@ -19,7 +19,8 @@
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">Credit Card Calculator!</h1>
-      <p>Need help applying for a new credit card? Tell us your spending habits and we'll give you our recommendation!</p>
+      <p>Need help applying for a new credit card? Tell us your spending habits and we'll give you our recommendation!
+      </p>
       <br />
       <h5> Enter Some Information </h5>
       <div class="form_container">
@@ -55,10 +56,11 @@
         </div>
         <div class="inner_flex_container">
           &nbsp;&nbsp;Percent Paid off Per Month: {{percentPaidOff}} %
-          <mat-slider thumbLabel [max]="100" [min]="0" [(ngModel)]="percentPaidOff" [step]="step" [displayWith]="formatLabel">
+          <mat-slider thumbLabel [max]="100" [min]="0" [(ngModel)]="percentPaidOff" [step]="step"
+            [displayWith]="formatLabel">
           </mat-slider>
         </div>
-        <img src="../assets/pictures/credit_cards.png" class = "image" style="position: absolute; left: 50%">
+        <img src="../assets/pictures/credit_cards.png" class="image" style="position: absolute; left: 50%">
 
       </div>
 
@@ -75,49 +77,57 @@
 
   <mat-toolbar color="primary" style="padding-left: 5%;"> Choose from Selection of Credit Cards</mat-toolbar>
 
-<div style="padding-left: 5%;  padding-top: 3%">
-    <h5 > Sort By: </h5>
-    <mat-checkbox [(ngModel)]="checked3"(change)="sortAPRArray()" style="padding-left: 3%">Variable APR</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked2"(change) = "sortAnnualArray()" style="padding-left: 3%">Annual Fee</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked1"(change)="sortSatArray()"  style="padding-left: 3%">Customer Satisfaction</mat-checkbox>
-    <mat-checkbox [(ngModel)]="checked4"(change)="sortByCredit()"  style="padding-left: 3%">Credit Score</mat-checkbox>
-</div>
+  <div style="padding-left: 5%;  padding-top: 3%; padding-bottom: 3%">
+    <h5> Sort By: </h5>
+    <button mat-raised-button style="background-color: green" (click)="sortAPRArray()" style="margin-left: 3%">Variable
+      APR</button>
+    <button mat-raised-button (click)="sortAnnualArray()" style="margin-left: 3%">Annual Fee</button>
+    <button mat-raised-button (click)="sortSatArray()" style="margin-left: 3%">Customer Satisfaction</button>
+    <button mat-raised-button (click)="sortByCredit()" style="margin-left: 3%">Credit Score</button>
 
-
-
-<mat-card class="frame credit-card" *ngFor="let card of credit_card">
-  <img src={{card.src}} style="max-height: 155px; max-width: 246.02px">
-  <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px; min-width: 300px">
-    <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
-    <h6> Approx. APR: {{card.APR}}%</h6>
-    <h6> Annual Fee: ${{card.annualFee}}</h6>
-    <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
-    <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
-    <h6> Gas Cashback {{card.cashbackGas}}%</h6>
-    <p> {{card.info}} </p>
+    <br />
   </div>
-  <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
-    <p>
-      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: orange; border-color: orange">Apply Now &raquo;</a>
-    </p>
-    <p>
-      <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button" style="background-color: green; border-color: green">More Details &raquo;</a>
-    </p>
-    <div>
-      Customer Rating: {{card.customerSat}}
-    </div>
-    <div>
-      Credit Score: {{card.score == 2 ? "Excellent" : (card.score == 1) ? "Good" : "Average"}}
-    </div>
-  </div>
-  <br />
-</mat-card>
 
-<div *ngFor="let cards of creditcards | async"> {{cards.name}} </div>
-<br />
 
-  <!-- End of Social Page -->
-<!-- <footer class="mastfoot mt-auto" style="padding-left: 5%">
+
+  <mat-card class="frame credit-card" *ngFor="let card of credit_card">
+    <img src={{card.src}} style="max-height: 155px; max-width: 246.02px">
+    <div class="inner_flex_container" style="padding-left: 3%; max-width: 600px; min-width: 300px">
+      <h2 style="font-size: 1.7em"> At a Glance - {{card.name}}</h2>
+      <h6> Approx. APR: {{card.APR}}%</h6>
+      <h6> Annual Fee: ${{card.annualFee}}</h6>
+      <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
+      <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
+      <h6> Gas Cashback {{card.cashbackGas}}%</h6>
+      <p> {{card.info}} </p>
+    </div>
+    <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
+      <p>
+        <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button"
+          style="background-color: orange; border-color: orange">Apply Now &raquo;</a>
+      </p>
+      <p>
+        <a class="btn btn-primary btn-lg" (click)="onNavigate()" role="button"
+          style="background-color: green; border-color: green">More Details &raquo;</a>
+      </p>
+      <div>
+        Customer Rating: {{card.customerSat}}
+      </div>
+      <div>
+        Credit Score: {{card.score == 2 ? "Excellent" : (card.score == 1) ? "Good" : "Average"}}
+      </div>
+    </div>
+    <br />
+  </mat-card>
+
+
+
+
+    <div *ngFor="let cards of creditcards | async"> Card: {{cards.name}} </div>
+    <br />
+
+    <!-- End of Social Page -->
+    <!-- <footer class="mastfoot mt-auto" style="padding-left: 5%">
   <div class="inner">
     <p> Hack NC Project by
       <b>Kimlynn Ngo</b> and

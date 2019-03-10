@@ -34,10 +34,8 @@ export class AppComponent implements OnInit {
 
   percentPaidOff: number;
 
-  checked1: boolean;
-  checked2: boolean;
-  checked3: boolean;
-  checked4: boolean;
+
+  panelOpenState: boolean //TODO: demo purposes expansion panel
 
   //Using DB
   creditcards: Observable<any[]>;
@@ -359,22 +357,15 @@ export class AppComponent implements OnInit {
     return 0;
   }
   sortSatArray() {
-    if (this.checked1) {
-      this.credit_card.sort(this.sortSat);
-    }
+    this.credit_card.sort(this.sortSat);
 
   }
   sortAPRArray() {
-    if (this.checked3) {
-      this.credit_card.sort(this.sortAPR);
-    }
+    this.credit_card.sort(this.sortAPR);
 
   }
   sortAnnualArray() {
-    if (this.checked2) {
-      this.credit_card.sort(this.sortAnnual);
-    }
-
+    this.credit_card.sort(this.sortAnnual);
   }
   sortLowestCost(a: CreditCard, b: CreditCard) {
     if (a.cashbackRestaurant * .01 * this.restaurant
