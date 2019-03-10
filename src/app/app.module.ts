@@ -41,7 +41,7 @@ import {CourseDialogComponentComponent} from './course-dialog-component/course-d
     FormsModule, MatToolbarModule, MatCheckboxModule, MatDialogModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
-  	AngularFirestoreModule,
+    AngularFirestoreModule,
 
     
   ],

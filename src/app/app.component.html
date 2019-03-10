@@ -89,7 +89,7 @@
     <h6> Restaurant Cashback {{card.cashbackRestaurant}}%</h6>
     <h6> Grocery Cashback {{card.cashbackGrocery}}%</h6>
     <h6> Gas Cashback {{card.cashbackGas}}%</h6>
-    <p> {{card.info}}</p>
+    <p> {{card.info}} </p>
   </div>
   <div class="inner_flex_container" style="padding-left: 5; padding-right: 3%">
     <p>
@@ -101,9 +101,14 @@
     <div>
       Customer Rating: {{card.customerSat}}
     </div>
+    <div>
+      Credit Score: {{card.score == 2 ? "Excellent" : (card.score == 1) ? "Good" : "Average"}}
+    </div>
   </div>
   <br />
 </mat-card>
+
+<div *ngFor="let cards of creditcards | async"> {{cards.name}} </div>
 <br />
 
   <!-- End of Social Page -->

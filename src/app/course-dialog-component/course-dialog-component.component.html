@@ -17,9 +17,11 @@
 <div *ngIf="data.highest <= 0">
     <h1 mat-dialog-title>It looks like you would lose the least with {{data.name}}!</h1>
     <img src={{data.src}}>
+  <br />
   <h6 mat-dialog-content>
     You would lose Approx. ${{data.highest.toFixed(2)}} with this credit card per month!
   </h6>
+  <br />
   <div mat-dialog-actions>
     <p>
       <a class="btn btn-primary btn-lg" (click)="onNavigate()" (click)="onNoClick()" role="button" style="background-color: orange; border-color: orange">Apply Now &raquo;</a>

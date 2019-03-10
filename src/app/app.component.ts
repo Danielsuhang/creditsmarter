@@ -4,6 +4,9 @@ import { CreditCard } from './model/credit_card';
 import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 import { CourseDialogComponentComponent } from './course-dialog-component/course-dialog-component.component';
+import { CreditcardsService } from './service/creditcards.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -36,11 +39,16 @@ export class AppComponent implements OnInit {
   checked3: boolean;
   checked4: boolean;
 
+  //Using DB
+  creditcards: Observable<any[]>;
 
 
-  constructor(public dialog: MatDialog) { }
+
+  constructor(public dialog: MatDialog, public service: CreditcardsService) { }
 
   ngOnInit() {
+    this.creditcards = this.service.getCreditCards();
+    console.log(this.creditcards);
     this.percentPaidOff = 0;
     this.restaurant = 0;
     this.grocery = 0;
