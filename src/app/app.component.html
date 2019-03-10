@@ -7,12 +7,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="navigateHistory()">History</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" (click)="navigateSocial()">Insights</a>
-      </li>
 
     </ul>
   </div>
@@ -21,7 +15,7 @@
 
 
 <!-- Start of Home Page -->
-<div *ngIf="homepage">
+<div>
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3">Credit Card Calculator!</h1>
@@ -118,68 +112,6 @@
 <br />
 
   <!-- End of Social Page -->
-
-  <!-- Start of Risk Page-->
-  <div *ngIf="securitypage">
-    <br />
-    <br />
-    <br />
-    <div class="blog-header">
-      <div class="container">
-        <h1 class="blog-title" style="text-align: center">Security Risks of Credit Cards</h1>
-        <p class="lead blog-description" style="text-align: center">A brief introduction to the history of Credit Cards</p>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 blog-main">
-          <div class="blog-post">
-            <img src='../assets/pictures/SS-credit-card-bear-trap.jpg'>
-            <h1 class="blog-post-title">Financial Risks</h1>
-            <h3>Overspending</h3>
-            <img src='../assets/pictures/overspending.jpg'>
-            <br />
-            <p class="big_text">The easy availability of credit can often be dangerous to those who have a habit of
-              impulsive purchasing items they cannot afford.
-            </p>
-
-
-            <ul class="big_text">
-              <li><b>Credit score can be lowered </b> when the cardholder spending reaches too close to their spending
-                limit.
-              </li>
-              <li> <b>Accumulation of debt </b> by not paying off monthly statement in full or at all. High APR can
-                possibly leave the cardholder in debt FOREVER. Not even joking. The average APR for people with GOOD
-                credit is almost 20% annually.
-              </li>
-            </ul>
-          </div><!-- /.blog-post -->
-          <div class="blog-post">
-            <h3>Social Risks</h3>
-            <img src='../assets/pictures/fraud.jpg'>
-            <br />
-            <p class="big_text">The possibility of someone stealing credit card information
-              is growing in today’s society. Estimates 9 million Americans a year suffer from Credit card Fraud
-            </p>
-            <ul class="big_text">
-              <li><b>Credit Skimmers </b> or hidden devices placed over point of sale terminals, are
-                becoming a growing problem in society.
-                <ul>
-                  <li>
-                    The <b>Secret Service</b> has recently cracked down upon credit card skimmer at gas pumps
-                    nationwide in response to the growing demand of fuel during the holiday season.
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div><!-- /.blog-post -->
-        </div><!-- /.blog-main -->
-      </div><!-- /.row -->
-    </div><!-- /.container -->
-</div>
-
-<!-- End of Social Page -->
-
 <!-- <footer class="mastfoot mt-auto" style="padding-left: 5%">
   <div class="inner">
     <p> Hack NC Project by

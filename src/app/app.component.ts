@@ -22,10 +22,6 @@ export class AppComponent implements OnInit {
   monthly_spending: number;
   exposed: boolean;
 
-  homepage: boolean = true;
-  socialpage: boolean = false;
-  historypage: boolean = false;
-  securitypage: boolean = false;
 
   gas: number;
   restaurant: number;
@@ -451,33 +447,6 @@ export class AppComponent implements OnInit {
   onNavigate() {
     window.open("https://www.capitalone.com/", "_blank");
   }
-  navigateHome() {
-    this.homepage = true;
-    this.socialpage = false;
-    this.securitypage = false;
-    this.historypage = false;
-  }
-  navigateHistory() {
-    this.homepage = false;
-    this.socialpage = false;
-    this.securitypage = false;
-    this.historypage = true;
-  }
-  navigateSocial() {
-    this.homepage = false;
-    this.socialpage = true;
-    this.securitypage = false;
-    this.historypage = false;
-  }
-  navigateSecurity() {
-    this.homepage = false;
-    this.socialpage = false;
-    this.securitypage = true;
-    this.historypage = false;
-  }
-
-
-
 }
 
 
