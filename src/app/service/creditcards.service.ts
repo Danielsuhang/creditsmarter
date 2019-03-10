@@ -8,11 +8,6 @@ export class CreditcardsService {
 
   constructor(public db: AngularFirestore) { }
   getCreditCards(){
-    return new Promise<any>((resolve, reject) => {
-      this.db.collection('/people').snapshotChanges()
-      .subscribe(snapshots => {
-        resolve(snapshots)
-      })
-    })
+    return this.db.collection('creditcards').valueChanges();
   }
 }
