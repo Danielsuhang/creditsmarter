@@ -3,12 +3,12 @@ This application helps the user pick the right credit card for him/her by using 
 
 It also allows the user to search through all the credit cards on file and sort them by APR, Credit Score requirements, cashback, etc.
 
-
+Navigate to `https://credit-smarter.firebaseapp.com` for a demo.
 
 
 # Directions on how to run the program locally
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Navigate into the folder and run: `npm install`. 
 
 ## Development server
 
